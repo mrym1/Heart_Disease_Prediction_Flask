@@ -1,0 +1,5 @@
+model,accuracy_mean,accuracy_std,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,roc_auc_mean,roc_auc_std,train_accuracy
+Logistic Regression,0.8543,0.0192,0.8873,0.0784,0.7968,0.0745,0.8332,0.0175,0.9202,0.0185,0.8725
+Random Forest,0.8312,0.03,0.8514,0.0801,0.7825,0.0718,0.8093,0.0276,0.9174,0.0115,0.8783
+SVM (RBF kernel),0.8544,0.0333,0.9026,0.093,0.7825,0.0718,0.8315,0.0334,0.9196,0.017,0.8725
+XGBoost,0.8345,0.0328,0.8503,0.0727,0.7899,0.0888,0.8123,0.0406,0.905,0.0186,0.8998
