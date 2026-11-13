@@ -65,7 +65,7 @@ def pretty(results):
 if __name__ == "__main__":
     results = compare()
     RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    results.round(4).to_csv(RESULTS_PATH)
+    results.to_csv(RESULTS_PATH)
 
     pd.set_option("display.width", 200)
     print("Stratified 5-fold CV, 302 patients, default settings:\n")

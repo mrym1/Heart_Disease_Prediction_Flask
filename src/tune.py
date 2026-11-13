@@ -96,7 +96,7 @@ def nested_cv():
 if __name__ == "__main__":
     results, chosen = nested_cv()
     RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    results.round(4).to_csv(RESULTS_PATH)
+    results.to_csv(RESULTS_PATH)
 
     pd.set_option("display.width", 200)
     print("\nNested CV (5 outer x 5 inner folds), tuned for ROC-AUC:\n")
