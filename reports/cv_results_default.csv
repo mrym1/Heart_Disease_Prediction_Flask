@@ -1,0 +1,6 @@
+model,accuracy_mean,accuracy_std,precision_mean,precision_std,recall_mean,recall_std,f1_mean,f1_std,roc_auc_mean,roc_auc_std,train_accuracy
+Baseline (always 'no disease'),0.5431,0.0071,0.0,0.0,0.0,0.0,0.0,0.0,0.5,0.0,0.543
+Logistic Regression,0.8476,0.0277,0.8681,0.0945,0.8037,0.0765,0.8286,0.0241,0.9173,0.025,0.8758
+Random Forest,0.8148,0.0347,0.8074,0.0534,0.7905,0.0875,0.7948,0.0431,0.9084,0.0158,1.0
+SVM (RBF kernel),0.8345,0.0192,0.8649,0.0655,0.7683,0.0937,0.8076,0.0318,0.9066,0.0237,0.9106
+XGBoost,0.8048,0.0436,0.7973,0.0592,0.7759,0.0671,0.7843,0.0451,0.8782,0.0217,1.0
