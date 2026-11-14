@@ -125,83 +125,123 @@
         </div>
         <main class="container">
           <form method="post" id="postform" autocomplete="off">
+            <p class="text-muted small">The codes match the dataset documentation (see notebooks/01_eda.ipynb). This is a student project, not a medical tool.</p>
             <div class="mb-3">
-              <div class="row">
-              <div class="col">
-                <label class="form-label fw-bold">Age</label>
-                <input type="number" class="form-control" name="age" required id="age" max="100" min="1" placeholder="(1-100) Age">
+              <div class="row g-3">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="age">Age</label>
+                <input type="number" class="form-control" name="age" required id="age" min="18" max="100" placeholder="Age in years (18-100)">
               </div>
-              <div class="col">
-                <label class="form-label fw-bold">Sex</label>
-                <input type="number" class="form-control" name="sex" required id="sex" max="1" min="0" placeholder="(0=Male or 1=Female) Sex">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="sex">Sex</label>
+                <select class="form-select" name="sex" required id="sex">
+                  <option value="" selected disabled>Choose...</option>
+                  <option value="0">Female</option>
+                  <option value="1">Male</option>
+                </select>
               </div>
               </div>
             </div>
             <div class="mb-3">
-              <div class="row">
-              <div class="col">
-                <label class="form-label fw-bold">Chest Pain</label>
-                <input type="number" class="form-control" name="cp" required id="cp" max="2" min="0" placeholder="(0=ATA, 1=NAP, 2=ASY) Chest Pain">
+              <div class="row g-3">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="cp">Chest pain type</label>
+                <select class="form-select" name="cp" required id="cp">
+                  <option value="" selected disabled>Choose...</option>
+                  <option value="0">Asymptomatic (no typical chest pain)</option>
+                  <option value="1">Atypical angina</option>
+                  <option value="2">Non-anginal pain</option>
+                  <option value="3">Typical angina</option>
+                </select>
               </div>
-              <div class="col">
-                <label class="form-label fw-bold">Resting Blood Pressure</label>
-                <input type="number" class="form-control" name="bp" required id="bp" max="200" min="90" placeholder="(90 to 200) Resting blood pressure">
-              </div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <div class="row">
-              <div class="col">
-                <label class="form-label fw-bold">Serum cholestoral</label>
-                <input type="number" class="form-control" name="chol" required id="chol" max="500" min="100" placeholder="(100 to 500) Serum cholestoral in mg/dl">
-              </div>
-              <div class="col">
-                <label class="form-label fw-bold">Fasting blood sugar</label>
-                <input type="number" class="form-control" name="fbs" required id="fbs" max="1" min="0" placeholder="(0 = No | 1 = Yes) Fasting blood sugar > 120 mg/dl">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="bp">Resting blood pressure</label>
+                <input type="number" class="form-control" name="bp" required id="bp" min="80" max="220" placeholder="mm Hg (80-220)">
               </div>
               </div>
             </div>
             <div class="mb-3">
-              <div class="row">
-              <div class="col">
-                <label class="form-label fw-bold">Resting Electrocardiographic</label>
-                <input type="number" class="form-control" name="restecg" required id="restecg" max="2" min="0" placeholder="(0=Normal,1=ST,2=LVH) Resting electrocardiographic results">
+              <div class="row g-3">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="chol">Serum cholesterol</label>
+                <input type="number" class="form-control" name="chol" required id="chol" min="100" max="600" placeholder="mg/dl (100-600)">
               </div>
-              <div class="col">
-                <label class="form-label fw-bold">Heart rate</label>
-                <input type="number" class="form-control" name="thalach" required id="thalach" max="200" min="70" placeholder="(70 to 200) Maximum heart rate achieved">
-              </div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <div class="row">
-              <div class="col">
-                <label class="form-label fw-bold">Exercise induced angina</label>
-                <input type="number" class="form-control" name="exang" required id="exang" max="1" min="0" placeholder="(0=No,1=Yes) Exercise induced angina">
-              </div>
-              <div class="col">
-                <label class="form-label fw-bold">Oldpeak</label>
-                <input type="number" class="form-control" name="oldpeak" required id="oldpeak" step="0.01" max="10" min="0" placeholder="Float(0 to 10) Oldpeak">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="fbs">Fasting blood sugar &gt; 120 mg/dl</label>
+                <select class="form-select" name="fbs" required id="fbs">
+                  <option value="" selected disabled>Choose...</option>
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
               </div>
               </div>
             </div>
             <div class="mb-3">
-              <div class="row">
-              <div class="col">
-                <label class="form-label fw-bold">Slope</label>
-                <input type="number" class="form-control" name="slope" required id="slope" max="2" min="0" placeholder="(0=Up, 1=Flat, 2=Down) The slope of the peak exercise ST segment">
+              <div class="row g-3">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="restecg">Resting ECG</label>
+                <select class="form-select" name="restecg" required id="restecg">
+                  <option value="" selected disabled>Choose...</option>
+                  <option value="1">Normal</option>
+                  <option value="2">ST-T wave abnormality</option>
+                  <option value="0">Left ventricular hypertrophy</option>
+                </select>
               </div>
-              <div class="col">
-                <label class="form-label fw-bold">Number of Major Vessels</label>
-                <input type="number" class="form-control" name="ca" required id="ca" max="3" min="0" placeholder="(0-3) Number of major vessels">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="thalach">Maximum heart rate (exercise test)</label>
+                <input type="number" class="form-control" name="thalach" required id="thalach" min="60" max="220" placeholder="beats per minute (60-220)">
               </div>
               </div>
             </div>
             <div class="mb-3">
-              <div class="row">
-              <div class="col">
-                <label class="form-label fw-bold">Thal</label>
-                <input type="number" class="form-control" name="thal" required id="thal" max="2" min="0" placeholder="Thal: 0 = normal; 1 = fixed defect; 2 = reversable defect">
+              <div class="row g-3">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="exang">Exercise-induced angina</label>
+                <select class="form-select" name="exang" required id="exang">
+                  <option value="" selected disabled>Choose...</option>
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
+                </select>
+              </div>
+              <div class="col-md">
+                <label class="form-label fw-bold" for="oldpeak">ST depression (oldpeak)</label>
+                <input type="number" class="form-control" name="oldpeak" required id="oldpeak" min="0" max="7" step="0.1" placeholder="mm (0-7)">
+              </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row g-3">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="slope">Slope of peak exercise ST segment</label>
+                <select class="form-select" name="slope" required id="slope">
+                  <option value="" selected disabled>Choose...</option>
+                  <option value="2">Upsloping</option>
+                  <option value="1">Flat</option>
+                  <option value="0">Downsloping</option>
+                </select>
+              </div>
+              <div class="col-md">
+                <label class="form-label fw-bold" for="ca">Major vessels coloured by fluoroscopy</label>
+                <select class="form-select" name="ca" required id="ca">
+                  <option value="" selected disabled>Choose...</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="row g-3">
+              <div class="col-md">
+                <label class="form-label fw-bold" for="thal">Thallium stress test</label>
+                <select class="form-select" name="thal" required id="thal">
+                  <option value="" selected disabled>Choose...</option>
+                  <option value="2">Normal</option>
+                  <option value="1">Fixed defect</option>
+                  <option value="3">Reversible defect</option>
+                </select>
               </div>
               </div>
             </div>
@@ -232,7 +272,6 @@
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
         <script src = {{ url_for('static', filename='JS/type.js') }}></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
           var typed = new Typed('.box', {
           strings: ['Age', 'Sex', 'Chest pain type (4 values)', 'Resting blood pressure',
@@ -246,62 +285,61 @@
           startDelay: 10,
           loop: true,
         });
-        function display()
-        {
-          loading.style.display = "none";
-          result_div.style.display = "block";
-        }
-        document.getElementById("result").style.display = "none";
+        const resultDiv = document.getElementById("result");
+        const resultTitle = document.getElementById("result_title");
+        resultDiv.style.display = "none";
         document.getElementById("loading").style.display = "none";
-        document.getElementById("result_title").style.display = "none";
-        document.getElementById('postform').addEventListener('submit', getData);
-        function getData(e){
-                e.preventDefault();
-                age = document.getElementById("age").value;
-                sex = document.getElementById("sex").value;
-                cp = document.getElementById("cp").value;//0-3
-                bp = document.getElementById("bp").value;//90-200
-                chol = document.getElementById("chol").value;//100-500
-                fbs = document.getElementById("fbs").value;//0-1
-                restecg = document.getElementById("restecg").value;//0-2
-                thalach = document.getElementById("thalach").value;//70-200
-                exang = document.getElementById("exang").value;//0-1
-                oldpeak = document.getElementById("oldpeak").value;//0-10
-                slope = document.getElementById("slope").value;//0-2
-                ca = document.getElementById("ca").value;//0-3
-                thal = document.getElementById("thal").value;//0-2
-                var params = {Age:age, Sex:sex, Cp:cp, Bp:bp, Chol:chol, Fbs:fbs, Restecg:restecg, Thalach:thalach, Exang:exang, Oldpeak:oldpeak, Slope:slope, Ca:ca, Thal:thal};
-                var xhr = new XMLHttpRequest();
-                xhr.open('post', '../reply', true)
-                xhr.setRequestHeader('Content-type', 'application/json');
-                xhr.onload = function(){
-                  result = Number(this.responseText);
-                  result_div = document.getElementById("result");
-                  loading = document.getElementById("loading");
-                  result_title = document.getElementById("result_title");
-                  result_div.style.display = "none";
-                  loading.style.display = "block";
-                  result_title.style.display = "block";
-                  window.scrollBy(0,170);
-                  setTimeout(display, 3000);
-                  if(result == 1)
-                  {
-                    result_div.classList.remove("result_shadow_success");
-                    result_div.innerText = "Bad News! Your test is Positive [1], You face some Heart Disease";
-                    result_div.classList.add("result_shadow_danger");
-                  }
-                  else
-                  {
-                    result_div.classList.remove("result_shadow_danger");
-                    result_div.innerText = "Good News! Your test is Negative [0], You don't face any Heart Disease";
-                    result_div.classList.add("result_shadow_success");
-                  }
-                }
-                xhr.send(JSON.stringify(params));
+        resultTitle.style.display = "none";
+        document.getElementById("postform").addEventListener("submit", getData);
+
+        // Keys expected by /reply  ->  id of the form field
+        const FIELDS = {Age: "age", Sex: "sex", Cp: "cp", Bp: "bp", Chol: "chol", Fbs: "fbs",
+                        Restecg: "restecg", Thalach: "thalach", Exang: "exang", Oldpeak: "oldpeak",
+                        Slope: "slope", Ca: "ca", Thal: "thal"};
+
+        function showResult(text, cssClass) {
+          resultDiv.classList.remove("result_shadow_success", "result_shadow_danger");
+          if (cssClass) resultDiv.classList.add(cssClass);
+          resultDiv.innerText = text;
+          resultTitle.style.display = "block";
+          resultDiv.style.display = "block";
+          resultDiv.scrollIntoView({behavior: "smooth", block: "center"});
+        }
+
+        async function getData(e) {
+          e.preventDefault();
+          const params = {};
+          for (const [key, id] of Object.entries(FIELDS)) {
+            params[key] = document.getElementById(id).value;
+          }
+          try {
+            const response = await fetch("/reply", {
+              method: "POST",
+              headers: {"Content-Type": "application/json"},
+              body: JSON.stringify(params),
+            });
+            const data = await response.json();
+            if (!response.ok) {
+              showResult("Please check the input:\n" + data.errors.join("\n"), "result_shadow_danger");
+              return;
             }
-            setTimeout(function(){
-            $('.loader_bg').fadeToggle();
-            }, 1000);
+            const percent = Math.round(data.probability * 100);
+            const note = "\n\nThis is a student machine-learning project, not a medical diagnosis.";
+            if (data.prediction === 1) {
+              showResult("The model estimates a HIGHER risk of heart disease (" + percent + "%)." + note,
+                         "result_shadow_danger");
+            } else {
+              showResult("The model estimates a LOWER risk of heart disease (" + percent + "%)." + note,
+                         "result_shadow_success");
+            }
+          } catch (err) {
+            showResult("Could not reach the server. Please try again.", "result_shadow_danger");
+          }
+        }
+        // Hide the loading screen after 1 second (no jQuery needed)
+        setTimeout(function () {
+          document.querySelector(".loader_bg").style.display = "none";
+        }, 1000);
         </script>
     </body>
 </html>
